@@ -1,11 +1,32 @@
 import './Car.css';
 import React from "react";
-// import Radium from "radium";
 
 class Car extends React.Component {
 
+    componentWillReceiveProps(nextProps, nextContext) {
+        console.log('car componentWillReceiveProps', nextProps)
+    }
+
+    shouldComponentUpdate(nextProps, nextState, nextContext) {
+        console.log('car shouldComponentUpdate', nextProps, nextState)
+        return true
+    }
+
+    componentWillUpdate(nextProps, nextState, nextContext) {
+        console.log('car componentWillUpdate', nextProps, nextState)
+    }
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        console.log('car componentDidUpdate')
+    }
+
 
     render() {
+        console.log('car render')
+        let {deleteItem} = this.props;
+        // console.log(props);
+        // console.log({deleteItem});
+
         const inputClasses = ['input']
 
         if (this.props.name !== '') {
@@ -29,7 +50,7 @@ class Car extends React.Component {
                     className={inputClasses.join(' ')}
                 /> <br/>
                 <button
-                    onClick={this.props.onDelete}
+                    onClick={deleteItem}
                 >delete
                 </button>
             </div>
