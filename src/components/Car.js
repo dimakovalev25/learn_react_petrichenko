@@ -3,26 +3,26 @@ import React from "react";
 
 class Car extends React.Component {
 
-    componentWillReceiveProps(nextProps, nextContext) {
-        console.log('car componentWillReceiveProps', nextProps)
-    }
-
-    shouldComponentUpdate(nextProps, nextState, nextContext) {
-        console.log('car shouldComponentUpdate', nextProps, nextState)
-        return nextProps.name.trim() !== this.props.name.trim()
-    }
-
-    componentWillUpdate(nextProps, nextState, nextContext) {
-        console.log('car componentWillUpdate', nextProps, nextState)
-    }
-
-    componentDidUpdate(prevProps, prevState, snapshot) {
-        console.log('car componentDidUpdate')
-    }
-
-    componentWillUnmount() {
-        console.log('car componentWillUnmount')
-    }
+    // componentWillReceiveProps(nextProps, nextContext) {
+    //     console.log('car componentWillReceiveProps', nextProps)
+    // }
+    //
+    // shouldComponentUpdate(nextProps, nextState, nextContext) {
+    //     console.log('car shouldComponentUpdate', nextProps, nextState)
+    //     return nextProps.name.trim() !== this.props.name.trim()
+    // }
+    //
+    // componentWillUpdate(nextProps, nextState, nextContext) {
+    //     console.log('car componentWillUpdate', nextProps, nextState)
+    // }
+    //
+    // componentDidUpdate(prevProps, prevState, snapshot) {
+    //     console.log('car componentDidUpdate')
+    // }
+    //
+    // componentWillUnmount() {
+    //     console.log('car componentWillUnmount')
+    // }
 
 
     render() {
@@ -33,8 +33,6 @@ class Car extends React.Component {
         // }
 
         let {deleteItem} = this.props;
-        // console.log(props);
-        // console.log({deleteItem});
 
         const inputClasses = ['input']
 

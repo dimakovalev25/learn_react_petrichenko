@@ -6,7 +6,7 @@ import Counter from "./counter/counter";
 
 class App extends React.Component {
     constructor(props) {
-        console.log('app constructor')
+        // console.log('app constructor')
         super(props);
         this.state = {
             data: [
@@ -57,16 +57,16 @@ class App extends React.Component {
         })
     }
 
-    componentWillMount() {
-        console.log('app componentWillMount')
-    }
-
-    componentDidMount() {
-        console.log('app componentDidMount')
-    }
+    // componentWillMount() {
+    //     console.log('app componentWillMount')
+    // }
+    //
+    // componentDidMount() {
+    //     console.log('app componentDidMount')
+    // }
 
     render() {
-        console.log('app render')
+        // console.log('app render')
         return (
             <div className='app' style={{
                 width: 400,
