@@ -11,8 +11,8 @@ class App extends React.Component {
         this.state = {
             data: [
                 {id: 1, name: 'audi rs6', year: 2018},
-                // {id: 2, name: 'toyota supra', year: 2001},
-                // {id: 3, name: 'bugatti veyron', year: 2018},
+                {id: 2, name: 'toyota supra', year: 2001},
+                {id: 3, name: 'bugatti veyron', year: 2018},
             ],
             pageTitle: 'HELLO REACT!',
             showCars: false,

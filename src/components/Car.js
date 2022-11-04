@@ -1,37 +1,11 @@
 import './Car.css';
 import React from "react";
+import PropTypes from 'prop-types'
+import withClass from '../higherOrderComponent/withClass'
 
 class Car extends React.Component {
 
-    // componentWillReceiveProps(nextProps, nextContext) {
-    //     console.log('car componentWillReceiveProps', nextProps)
-    // }
-    //
-    // shouldComponentUpdate(nextProps, nextState, nextContext) {
-    //     console.log('car shouldComponentUpdate', nextProps, nextState)
-    //     return nextProps.name.trim() !== this.props.name.trim()
-    // }
-    //
-    // componentWillUpdate(nextProps, nextState, nextContext) {
-    //     console.log('car componentWillUpdate', nextProps, nextState)
-    // }
-    //
-    // componentDidUpdate(prevProps, prevState, snapshot) {
-    //     console.log('car componentDidUpdate')
-    // }
-    //
-    // componentWillUnmount() {
-    //     console.log('car componentWillUnmount')
-    // }
-
-
     render() {
-        console.log('car render')
-
-        // if (Math.random() > 0.7) {
-        //     throw new Error('Car failed')
-        // }
-
         let {deleteItem} = this.props;
 
         const inputClasses = ['input']
@@ -47,7 +21,7 @@ class Car extends React.Component {
         }
 
         return (
-            <div className='car'>
+            <React.Fragment className='Car'>
                 car name: {this.props.name} <br/>
                 year: {this.props.year} <br/>
                 <input
@@ -60,9 +34,16 @@ class Car extends React.Component {
                     onClick={deleteItem}
                 >delete
                 </button>
-            </div>
+            </React.Fragment>
         )
     }
 }
 
-export default Car;
+Car.propTypes = {
+    name: PropTypes.string,
+    year: PropTypes.number,
+    onChangeName: PropTypes.func,
+    deleteItem: PropTypes.func,
+}
+
+export default withClass(Car, Car);
