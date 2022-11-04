@@ -9,7 +9,7 @@ class Car extends React.Component {
 
     shouldComponentUpdate(nextProps, nextState, nextContext) {
         console.log('car shouldComponentUpdate', nextProps, nextState)
-        return true
+        return nextProps.name.trim() !== this.props.name.trim()
     }
 
     componentWillUpdate(nextProps, nextState, nextContext) {
@@ -20,9 +20,19 @@ class Car extends React.Component {
         console.log('car componentDidUpdate')
     }
 
+    componentWillUnmount() {
+        console.log('car componentWillUnmount')
+    }
+
 
     render() {
         console.log('car render')
+
+        if (Math.random() > 0.7) {
+            throw new Error('Car failed')
+
+        }
+
         let {deleteItem} = this.props;
         // console.log(props);
         // console.log({deleteItem});

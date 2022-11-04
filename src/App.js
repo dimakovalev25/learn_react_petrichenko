@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import Car from "./components/Car";
+import ErrorBoundary from "./errorBoundary/errorBoundary";
 
 class App extends React.Component {
     constructor(props) {
@@ -9,8 +10,8 @@ class App extends React.Component {
         this.state = {
             data: [
                 {id: 1, name: 'audi rs6', year: 2018},
-                // {id: 2, name: 'toyota supra', year: 2001},
-                // {id: 3, name: 'bugatti veyron', year: 2018},
+                {id: 2, name: 'toyota supra', year: 2001},
+                {id: 3, name: 'bugatti veyron', year: 2018},
             ],
             pageTitle: 'HELLO REACT!',
             showCars: false,
@@ -94,13 +95,14 @@ class App extends React.Component {
 
                 {this.state.showCars ? this.state.data.map((item, index) => {
                         return (
+                            <ErrorBoundary key={item.id}>
                             <Car
-                                key={item.id}
                                 name={item.name}
                                 year={item.year}
                                 deleteItem={() => this.deleteItem(item.id)}
                                 onChangeName={e => this.onChangeName(e.target.value, index)}
                             />
+                            </ErrorBoundary>
                         )
                     })
                     : null
