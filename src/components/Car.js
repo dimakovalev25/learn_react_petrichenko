@@ -28,10 +28,9 @@ class Car extends React.Component {
     render() {
         console.log('car render')
 
-        if (Math.random() > 0.7) {
-            throw new Error('Car failed')
-
-        }
+        // if (Math.random() > 0.7) {
+        //     throw new Error('Car failed')
+        // }
 
         let {deleteItem} = this.props;
         // console.log(props);

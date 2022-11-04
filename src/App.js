@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Car from "./components/Car";
 import ErrorBoundary from "./errorBoundary/errorBoundary";
+import Counter from "./counter/counter";
 
 class App extends React.Component {
     constructor(props) {
@@ -10,8 +11,8 @@ class App extends React.Component {
         this.state = {
             data: [
                 {id: 1, name: 'audi rs6', year: 2018},
-                {id: 2, name: 'toyota supra', year: 2001},
-                {id: 3, name: 'bugatti veyron', year: 2018},
+                // {id: 2, name: 'toyota supra', year: 2001},
+                // {id: 3, name: 'bugatti veyron', year: 2018},
             ],
             pageTitle: 'HELLO REACT!',
             showCars: false,
@@ -72,6 +73,7 @@ class App extends React.Component {
                 margin: 'auto',
                 paddingTop: "20px"
             }}>
+                <Counter />
                 <h1 className='car'>
                     {this.state.pageTitle} <br/>
 
