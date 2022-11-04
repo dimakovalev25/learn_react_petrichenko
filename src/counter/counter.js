@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import Auxiliary from "../higherOrderComponent/Auxiliary";
 
 export default class Counter extends Component {
 
@@ -14,11 +15,11 @@ export default class Counter extends Component {
 
     render () {
         return (
-            <React.Fragment>
+            <Auxiliary>
                 <h2>Counter {this.state.counter}</h2>
                 <button onClick={this.addCounter}>+</button>
                 <button onClick={() => this.setState({counter: this.state.counter - 1})}>-</button>
-            </React.Fragment>
+            </Auxiliary>
         )
     }
 
